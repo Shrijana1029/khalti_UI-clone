@@ -13,7 +13,28 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        textTheme: const TextTheme(
+          displaySmall: TextStyle(
+            fontSize: 10,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 0.5,
+            fontFamily: 'Poppins',
+          ),
+          displayLarge: TextStyle(
+            fontSize: 26,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 0,
+            fontFamily: 'Poppins',
+          ),
+          displayMedium: TextStyle(
+            fontSize: 16,
+            // fontWeight: FontWeight.bold,
+            letterSpacing: 0,
+            fontFamily: 'Poppins',
+          ),
+        ),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
