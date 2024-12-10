@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
             fontFamily: 'Poppins',
           ),
         ),
+        primaryColor: const Color.fromARGB(255, 80, 20, 91),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),

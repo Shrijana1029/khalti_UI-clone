@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_khalti/pages/dashboard.dart';
 import 'package:my_khalti/pages/qr.dart';
 import 'package:my_khalti/pages/support.dart';
 import 'package:my_khalti/pages/transaction.dart';
@@ -25,10 +26,10 @@ class _HomePageState extends State<HomePage> {
       PersistentTabController(initialIndex: 0);
   List<Widget> _buildScreens() {
     return [
+      Dashboard(),
+      Support(),
+      QrPage(),
       Transaction(),
-      Support(),
-      Support(),
-      Support(),
       Support(),
     ];
   }

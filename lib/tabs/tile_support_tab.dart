@@ -11,7 +11,7 @@ class TileForSupporTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
