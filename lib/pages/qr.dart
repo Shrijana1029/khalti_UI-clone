@@ -1,4 +1,9 @@
+// import 'dart:nativewrappers/_internal/vm/lib/ffi_native_type_patch.dart';
+import 'dart:typed_data';
+// import 'package:typed_data/typed_data.dart';
+
 import 'package:flutter/material.dart';
+import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:my_khalti/tabs/my_qr.dart';
 
 class QrPage extends StatefulWidget {
@@ -9,6 +14,7 @@ class QrPage extends StatefulWidget {
 }
 
 class _QrPageState extends State<QrPage> {
+  bool isScanCompleted = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,6 +58,40 @@ class _QrPageState extends State<QrPage> {
                 ),
                 const SizedBox(
                   height: 25,
+                ),
+                ////////////SCANNING SECTION////
+                Container(
+                    height: MediaQuery.of(context).size.height * 0.3,
+                    width: MediaQuery.of(context).size.width * 0.6,
+                    color: Colors.white,
+                    child: MobileScanner(
+                      controller: MobileScannerController(
+                        detectionSpeed: DetectionSpeed.noDuplicates,
+                        //returns an images
+                        returnImage: true,
+                      ),
+                      onDetect: (capture) {
+                        ///store the value that has been captured by caputure of onDetect
+                        final List<Barcode> barcodes = capture.barcodes;
+                        // Unitlistis dart type normally used to store binary data like, images, audio
+                        final Uint8List? image = capture.image;
+                        for (final barcode in barcodes) {
+                          print('Barcode found!! ${barcode.rawValue}');
+                        }
+                        //rawvalue = the info that qr code has been captured
+                        if (image != null) {
+                          showDialog(
+                              context: context,
+                              builder: (context) => AlertDialog(
+                                  title: Text(
+                                    barcodes.first.rawValue ?? '',
+                                  ),
+                                  content: Image.asset('assets/img/baby.jpg')));
+                        }
+                      },
+                    )),
+                const SizedBox(
+                  height: 15,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),

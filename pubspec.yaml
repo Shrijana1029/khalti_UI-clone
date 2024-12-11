@@ -37,6 +37,9 @@ dependencies:
   cupertino_icons: ^1.0.8
   persistent_bottom_nav_bar: ^6.2.1
   font_awesome_flutter: ^10.8.0
+  mobile_scanner: ^6.0.2
+  typed_data: ^1.4.0
+  carousel_slider: ^5.0.0
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +67,7 @@ flutter:
   assets:
    - assets/icons/
    - assets/img/
+   - assets/img/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
